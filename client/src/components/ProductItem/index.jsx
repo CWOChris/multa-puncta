@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux"; // Import useDispatch and useSelector hooks from react-redux
-import { addToCart, updateCartQuantity } from "../../utils/actions"; // Import Redux actions
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, updateCartQuantity } from "../../utils/actions";
 
 function ProductItem(item) {
-  const dispatch = useDispatch(); // Get Redux dispatch function
-  const cart = useSelector((state) => state.cart); // Access cart from Redux store state
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
 
   const { image, name, _id, price, quantity } = item;
 
