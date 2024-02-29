@@ -1,9 +1,17 @@
-// The ...props means, spread all of the passed props onto this element
-// That way we don't have to define them all individually
-function DeleteBtn(props) {
+import React from'react';
+import { useDispatch } from'react-redux';
+import { removeFromCart } from '../../utils/actions';
+
+function DeleteBtn({ itemId }){
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(removeFromCart(itemId));
+  };
+
   return (
-    <span {...props} role="button" tabIndex="0">
-      ✗
+    <span role='button' tabIndex="0" onClick={handleClick} onKeyDown={handleClick}>
+      🗑️
     </span>
   );
 }
